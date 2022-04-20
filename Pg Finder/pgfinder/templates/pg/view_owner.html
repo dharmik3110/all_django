@@ -1,0 +1,45 @@
+{% extends "base1.html" %}
+
+{% block container %}
+
+<table class="table">
+    <tr>
+        <thead class="thead-light">
+            <tr>
+                <th scope="col">Id</th>
+                <th scope="col">Name</th>
+                <th scope="col">Email</th>
+                <th scope="col">Address</th>
+                <th scope="col">Phone</th>
+                <th scope="col">Action</th>
+
+               
+
+                
+            </tr>
+        </thead>
+        <tbody>
+            {% for newowner in newowners %}
+            <tr>
+                
+                <td><a href = "{% url 'detail_pg' newowner.pk %}">{{newowner.id}}</a></td>
+                <td>{{newowner.owner_name}}</td>
+                <td>{{newowner.owner_email}}</td>
+                <td>{{newowner.owner_address}}</td>
+                <td>{{newowner.owner_phonenumber}}</td>
+                
+                <td>
+                    
+                   <a class = "btn btn-danger" href = "{% url 'delete_owner' newowner.pk %}">Delete</a>
+                    <a class = "btn btn-primary" href = "{% url 'update_owner' newowner.pk %}">Update</a>
+                 
+                </td>
+                    
+                
+            </tr>
+            {% endfor %}
+        </tbody>
+</table>
+
+
+{% endblock %}

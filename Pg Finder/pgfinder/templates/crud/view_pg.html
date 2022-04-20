@@ -1,0 +1,49 @@
+{% extends "base1.html" %}
+
+{% block container %}
+
+<table class="table">
+    <tr>
+        <thead class="thead-light">
+            <tr>
+                
+                <th scope="col">ID</th>
+                <th scope="col">NAME</th>
+                <th scope="col">ADDRESS</th>
+                <th scope="col">ROOMS</th>
+                <th scope="col">PHONE NUMBER</th>
+                <th scope="col">ACTION</th>
+
+
+
+               
+
+                
+            </tr>
+        </thead>
+        <tbody>
+            {% for i in pgowners %}
+            <tr>
+                
+                <td><a href = "{% url 'detail_pg' i.pk %}">{{i.id}}</a></td>
+                <td>{{i.pg_name}}</td>
+                <td>{{i.pg_address}}</td>
+                <td>{{i.pg_rooms}}</td>
+                <td>{{i.phone_number}}</td>
+                
+                <td>
+                    
+                   <a class = "btn btn-danger" href ="{% url 'delete_pg' i.pk%}">Delete</a>
+                    <a class = "btn btn-primary" href ="{% url 'update_pg' i.pk%}">Update</a>
+                 
+                </td>
+                    
+                
+            </tr>
+            {% endfor %}
+        </tbody>
+</table>
+
+
+{% endblock %}
+

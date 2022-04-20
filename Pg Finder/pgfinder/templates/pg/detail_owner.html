@@ -1,0 +1,30 @@
+{% extends 'base1.html' %}
+{% block container %}
+    <div class="card">
+        <div class="card-header">
+            <h5 class="card-title">PG Details #{{newowner.id }}</h5>
+        </div>
+        <div class="card-body">
+            <dl class="row">
+                <dt class="col-sm-3">
+                    PG -Provider Name
+                </dt>
+                <dd class="col-sm-9">
+                    {{ newowner.name }}
+                </dd>
+                <dt class="col-sm-3">
+                    PG email                
+                </dt>
+                <dt class="col-sm-3">
+                    {{ newowner.email }}
+                </dt>
+                <dt class="col-sm-3">
+                    PG Address
+                </dt>
+                <dd class="col-sm-9">
+                    {{ newowner.address }}
+                </dd>
+            </dl>
+        </div>
+    </div>
+{% endblock %}
